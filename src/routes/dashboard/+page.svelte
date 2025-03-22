@@ -1,6 +1,9 @@
 <script lang="ts">
 	import type { PageData } from "./$types";
-
+	import Logo from "$lib/images/LearnQuest_logo.png";
+	function goToAccount() {
+		location.replace("/account");
+	}
 	export let data: PageData;
 </script>
 
@@ -8,19 +11,71 @@
 	<title>Dashboard</title>
 </svelte:head>
 
-<h1>Dashboard</h1>
-
-<p>This is your dashboard, {data.name}.</p>
-
-<img
-	src="https://picsum.photos/id/177/800/600"
-	alt="hiker wearing a backpack looking over mountains in the morning"
-/>
+<h1>
+	Welcome to LearnQuest, <br />{data.name}!<br /><br /><img
+		src={Logo}
+		alt="LearnQuest"
+	/>
+</h1>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div class="card" on:click={goToAccount}>
+	<div class="card-body">
+		<h1>Account Settings</h1>
+	</div>
+</div>
+<div class="card">
+	<div class="card-body"><h1>Quest Library</h1></div>
+</div>
+<div class="card">
+	<div class="card-body"><h1>My Quests</h1></div>
+</div>
+<div class="card">
+	<div class="card-body"><h1>Create a Quest</h1></div>
+</div>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div class="card" on:click={goToAccount}>
+	<div class="card-body">
+		<h1>Account Settings</h1>
+	</div>
+</div>
 
 <style>
 	img {
 		display: block;
-		max-width: 100%;
-		margin-top: 1rem;
+		height: 100px;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 7px;
+	}
+	h1 {
+		text-align: center;
+		font-family: "Varela Round";
+		font-size: 30px;
+	}
+	.card h1 {
+		margin-bottom: 0px;
+		font-size: 24px;
+	}
+
+	.card {
+		margin-bottom: 10px;
+		border-radius: 10px;
+		border: none;
+	}
+
+	.card:nth-child(2) {
+		background-color: #ffb6c1;
+	}
+
+	.card:nth-child(3) {
+		background-color: #90ee90;
+	}
+
+	.card:nth-child(4) {
+		background-color: #add8e6;
+	}
+
+	.card:nth-child(5) {
+		background-color: #fbdf71;
 	}
 </style>
