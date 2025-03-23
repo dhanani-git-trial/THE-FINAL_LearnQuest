@@ -1,8 +1,17 @@
 <script lang="ts">
 	import type { PageData } from "./$types";
 	import Logo from "$lib/images/LearnQuest_logo.png";
-	function goToAccount() {
+	function Account() {
 		location.replace("/account");
+	}
+	function QuestLibrary() {
+		location.replace("/dashboard/quest_library");
+	}
+	function MyQuests() {
+		location.replace("/dashboard/my_quests");
+	}
+	function CreateAQuest() {
+		location.replace("/dashboard/create_a_quest");
 	}
 	export let data: PageData;
 </script>
@@ -17,23 +26,27 @@
 		alt="LearnQuest"
 	/>
 </h1>
+
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="card" on:click={goToAccount}>
+<div class="card" on:click={QuestLibrary}>
 	<div class="card-body">
-		<h1>Account Settings</h1>
+		<h1>Quest Library</h1>
 	</div>
 </div>
-<div class="card">
-	<div class="card-body"><h1>Quest Library</h1></div>
-</div>
-<div class="card">
-	<div class="card-body"><h1>My Quests</h1></div>
-</div>
-<div class="card">
-	<div class="card-body"><h1>Create a Quest</h1></div>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div class="card" on:click={MyQuests}>
+	<div class="card-body">
+		<h1>My Quests</h1>
+	</div>
 </div>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="card" on:click={goToAccount}>
+<div class="card" on:click={CreateAQuest}>
+	<div class="card-body">
+		<h1>Create a Quest</h1>
+	</div>
+</div>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div class="card" on:click={Account}>
 	<div class="card-body">
 		<h1>Account Settings</h1>
 	</div>
@@ -55,6 +68,7 @@
 	.card h1 {
 		margin-bottom: 0px;
 		font-size: 24px;
+		color: black;
 	}
 
 	.card {

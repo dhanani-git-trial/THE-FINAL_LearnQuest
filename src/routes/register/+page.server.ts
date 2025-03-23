@@ -1,5 +1,5 @@
 import { register_user } from "$lib/server/register";
-import { fail } from "@sveltejs/kit";
+import { fail, redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 
 export const actions: Actions = {
@@ -19,8 +19,7 @@ export const actions: Actions = {
 		if (error) {
 			return fail(400, { user, error });
 		} else {
-			const message = "Registration successful! You can now login.";
-			return { user, message };
+			throw redirect(303, "/loading/registrationsuccessful");
 		}
 	}
 };
