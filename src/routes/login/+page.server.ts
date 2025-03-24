@@ -1,4 +1,4 @@
-import { fail } from "@sveltejs/kit";
+import { fail, redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 import { login_user } from "$lib/server/login";
 import { cookie_options } from "$lib/server/utils";
@@ -23,7 +23,7 @@ export const actions: Actions = {
 			event.cookies.set("email", user.email, cookie_options);
 			event.cookies.set("name", user.name, cookie_options);
 
-			return { email, user };
+			throw redirect(303, "/dashboard");
 		}
 	}
 };

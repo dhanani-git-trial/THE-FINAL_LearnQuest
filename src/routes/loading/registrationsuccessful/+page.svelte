@@ -7,7 +7,7 @@
 </script>
 <div>
 <Spinner></Spinner>
-<h3>Registration sucessful!<br>Redirecting to login page...</h3>
+<h3>Registration successful!<br>Redirecting to login page...</h3>
 </div>
 <style>
     h3 {
