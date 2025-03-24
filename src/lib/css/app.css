@@ -5,7 +5,7 @@
 }
 
 :root {
-	--accent-color: rgb(211, 59, 3);
+	--accent-color: #28a745;
 	--highlight-color: yellow;
 	--error-color: rgb(230, 20, 20);
 	--background-color: #131317;
@@ -43,7 +43,8 @@ a:focus {
 }
 
 button,
-input {
+input,
+select {
 	color: inherit;
 	border: none;
 	font-family: inherit;
@@ -63,13 +64,13 @@ button:focus {
 	outline-offset: 0.2rem;
 }
 
-input {
+input, select {
 	padding: 0.4rem;
 	width: 100%;
 	border: 0.1rem solid #555;
 }
 
-input:focus {
+input:focus, select:focus {
 	border-color: var(--accent-color);
 	outline: 0.1rem solid var(--accent-color);
 }
@@ -96,4 +97,8 @@ label {
 
 p {
 	margin-bottom: 0.5rem;
+}
+
+option {
+	color: black;
 }

@@ -28,12 +28,6 @@
 	<button>Login</button>
 </form>
 
-{#if form?.user}
-	<p class="success">
-		Welcome {form.user.name}! You can now open the dashboard.
-	</p>
-{/if}
-
 {#if form?.error}
 	<p class="error">
 		{form.error}

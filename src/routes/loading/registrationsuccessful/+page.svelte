@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Spinner from "$lib/components/Spinner.svelte";
-    export let data;
     setTimeout(() => {
       window.location.href = '/login';  // Redirect to the desired URL
     }, 1000);  // 1000 milliseconds = 1 second

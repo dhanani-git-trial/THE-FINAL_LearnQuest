@@ -3,7 +3,10 @@
 ## Setup
 
 1. Take starter code from the branch `main` and open it
-2. Terminal - npm install ---- make sure node is installed it doesn't work
+2.
+`npm install`
+`pnpm i -D flowbite-svelte flowbite`
+`pnpm i -D flowbite-svelte-icons`
 
 ## MongoDB
 
