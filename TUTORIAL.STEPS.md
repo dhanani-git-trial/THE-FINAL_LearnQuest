@@ -5,8 +5,6 @@
 1. Take starter code from the branch `main` and open it
 2.
 `npm install`
-`pnpm i -D flowbite-svelte flowbite`
-`pnpm i -D flowbite-svelte-icons`
 
 ## MongoDB
 
