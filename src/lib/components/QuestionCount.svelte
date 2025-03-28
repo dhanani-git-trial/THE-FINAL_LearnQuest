@@ -44,8 +44,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
     padding: 0 1rem;
   }
 
@@ -57,7 +55,6 @@
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3), 4px 7px 15px rgba(0, 0, 0, 0.2),
       9px 15px 25px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
-    max-width: 360px;
   }
 
   button,
@@ -69,7 +66,6 @@
   }
 
   input {
-    width: 100%;
     text-align: center;
   }
 

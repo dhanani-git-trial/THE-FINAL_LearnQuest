@@ -58,6 +58,7 @@
 	nav {
 		padding-block: 1.25rem;
 		background-color: var(--nav-color);
+		top: 0;
 	}
 	ul {
 		list-style-type: none;

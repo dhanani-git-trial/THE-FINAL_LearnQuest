@@ -59,6 +59,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		border-radius: 7px;
+		background-color: black;
 	}
 	h1 {
 		text-align: center;
