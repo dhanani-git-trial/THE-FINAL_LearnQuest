@@ -1,6 +1,5 @@
 <script lang="ts">
   import "$lib/css/create_a_quest.css";
-  import Small_logo from "$lib/images/LearnQuest_logo_small.png";
 	import QuestionCount from "$lib/components/QuestionCount.svelte";
   let selectedQuizType = 'value-1'; // Track the selected quiz type
 
