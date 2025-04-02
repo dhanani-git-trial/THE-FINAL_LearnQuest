@@ -11,7 +11,7 @@
 		location.replace("/dashboard/my_quests");
 	}
 	function CreateAQuest() {
-		location.replace("/dashboard/create_a_quest");
+		location.replace("/dashboard/create_a_quest/main");
 	}
 	export let data: PageData;
 </script>

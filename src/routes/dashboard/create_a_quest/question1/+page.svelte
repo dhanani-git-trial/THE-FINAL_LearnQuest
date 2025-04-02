@@ -1,10 +1,26 @@
-<script>
+<script lang="ts">
   import "$lib/css/question.css";
+  import type { ActionData, PageData } from "./$types";
+  export let form: ActionData;
+  export let data: PageData;
+
+  let correctAnswer = ""; // To store the selected correct answer
+  let charCount = 0; // To track the character count for the description
+
+  // Handlers for selecting the correct answer
+  const selectAnswer = (answer: string) => {
+    correctAnswer = answer;
+  };
+
+  // Handler for updating character count
+  const updateCharCount = (event: Event) => {
+    const target = event.target as HTMLTextAreaElement;
+    charCount = target.value.length;
+  };
 </script>
 
-
 <div class="form-container">
-  <form class="form">
+  <form class="form" id="questForm" method="POST">
     <div class="form-group">
       <h2>Edit Question 1</h2>
       <br>
@@ -29,52 +45,40 @@
     </div>
     <div class="form-group">
       <label for="q1_des">Description</label>
-      <textarea id="q1_des" maxlength="270" rows="5" cols="50" placeholder="Type here..."></textarea>
-      <p id="charCount">0 / 270</p>
+      <textarea
+        id="q1_des"
+        name="q1_des"
+        required
+        maxlength="270"
+        rows="5"
+        cols="50"
+        placeholder="Type here..."
+        on:input={updateCharCount}
+      ></textarea>
+      <p id="charCount">{charCount} / 270</p>
       <br>
       <!-- svelte-ignore a11y-label-has-associated-control -->
       <label>Select Correct Answer</label>
-      <!-- Answer selection buttons -->
-      <div class="nav">
-        <div class="container">
-          <div class="btn" data-answer="A">A</div>
-          <div class="btn" data-answer="B">B</div>
-          <div class="btn" data-answer="C">C</div>
-          <div class="btn" data-answer="D">D</div>
-        </div>
+      <div class="radio-inputs">
+        <label class="radio">
+          <input type="radio" name="ca_1" value="A" required>
+          <span class="name">A</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="ca_1" value="B" required>
+          <span class="name">B</span>
+        </label>
+            
+        <label class="radio">
+          <input type="radio" name="ca_1" value="C" required>
+          <span class="name">C</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="ca_1" value="D" required>
+          <span class="name">D</span>
+        </label>
       </div>
-    </div>
-    
-    
-    <!-- Hidden input to store correct answer -->
-    <input class="selected" type="hidden" id="ca_1" name="ca_1">
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const textarea = document.getElementById("q1_des");
-        const charCount = document.getElementById("charCount");
-        const answerButtons = document.querySelectorAll(".btn");
-        const correctAnswerInput = document.getElementById("ca_1");
-    
-        // Update character count for textarea
-        textarea.addEventListener("input", function () {
-          charCount.textContent = `${this.value.length} / 270`;
-        });
-    
-        // Handle answer selection
-        answerButtons.forEach(button => {
-          button.addEventListener("click", function () {
-            // Remove 'selected' class from all buttons
-            answerButtons.forEach(btn => btn.classList.remove("selected"));
-            
-            // Add 'selected' class to clicked button
-            this.classList.add("selected");
-            
-            // Update hidden input value
-            correctAnswerInput.value = this.getAttribute("data-answer");
-          });
-        });
-      });
-    </script>
+      <input class="email_input" type="text" name="email" value={data.email}>
     <button class="form-submit-btn" type="submit">Submit</button>
   </form>
 </div>
