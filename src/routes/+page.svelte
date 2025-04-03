@@ -1,3 +1,7 @@
+<script>
+	import '$lib/css/app.css';
+</script>
+
 <svelte:head>
 	<title>SvelteKit Authentication with MongoDB</title>
 </svelte:head>

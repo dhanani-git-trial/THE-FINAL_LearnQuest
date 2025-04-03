@@ -1,4 +1,5 @@
 <script lang="ts">
+  import '$lib/css/app.css';
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
   import type { ActionData, PageData } from "./$types";
@@ -46,6 +47,9 @@ export let form: ActionData;
 <br>
 
 <form id="questForm" method="POST">
+  <script>
+    localStorage.setItem("condition", 0);
+  </script>
  <h2>Type of Quest</h2>
   <div class="radio-input">
     <label class="label">

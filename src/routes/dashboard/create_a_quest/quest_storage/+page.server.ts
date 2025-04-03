@@ -9,7 +9,6 @@ if (!SECRET_MONGODB_URI || typeof SECRET_MONGODB_URI !== 'string') {
 const client = new MongoClient(SECRET_MONGODB_URI);
 let isClientConnected = false;
 
-
 export const actions: Actions = {
     default: async ({ request }) => {
         try {

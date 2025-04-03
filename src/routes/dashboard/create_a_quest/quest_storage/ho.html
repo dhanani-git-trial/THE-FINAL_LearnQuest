@@ -1,0 +1,212 @@
+
+You Have Officially Completed
+{#if condition == "0"}
+    the Main Page!
+{:else if condition == "10"}
+    10 Questions!
+{:else}
+ Another Section!
+{/if}
+
+
+
+
+{#if condition == "10"}
+You've reached the max of 10 questions. Take a moment to review and submit your awesome quiz!
+{:else}
+You can move on to the next question, edit the other ones, preview your quest, or submit it with what you've got so far. Just a heads up, there’s a max of 10 questions that you can create. 😊
+{/if}
+
+
+<div class="form-container">
+<form class="form" id="questForm" method="POST" use:enhance>
+<input hidden name="email" value={data.email} />
+</form>
+</div>
+
+{#if form?.quest_type}
+<strong>Quest Type: </strong><button class="x"
+    >{form.quest_type}</button
+>
+{/if}
+<br />
+<hr />
+{#if form?.q1}
+<strong>Question 1: </strong><button class="x">{form.q1}</button
+><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A)
+<button class="x">{form.q1_a}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B)
+<button class="x">{form.q1_b}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C)
+<button class="x">{form.q1_c}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D)
+<button class="x">{form.q1_d}</button><br />
+Correct Answer: <button class="x">{form.ca_1}</button><br />
+Description:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<button class="x">{form.q1_des}</button>
+<br />
+<hr />
+{/if}
+
+{#if form?.q2}
+<strong>Question 2: </strong><button class="x">{form.q2}</button
+><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A)
+<button class="x">{form.q2_a}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B)
+<button class="x">{form.q2_b}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C)
+<button class="x">{form.q2_c}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D)
+<button class="x">{form.q2_d}</button><br />
+Correct Answer: <button class="x">{form.ca_2}</button><br />
+Description:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<button class="x">{form.q2_des}</button>
+<br />
+<hr />
+{/if}
+
+{#if form?.q3}
+<strong>Question 3: </strong><button class="x">{form.q3}</button
+><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A)
+<button class="x">{form.q3_a}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B)
+<button class="x">{form.q3_b}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C)
+<button class="x">{form.q3_c}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D)
+<button class="x">{form.q3_d}</button><br />
+Correct Answer: <button class="x">{form.ca_3}</button><br />
+Description:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<button class="x">{form.q3_des}</button>
+<br />
+<hr />
+{/if}
+
+{#if form?.q4}
+<strong>Question 4: </strong><button class="x">{form.q4}</button
+><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A)
+<button class="x">{form.q4_a}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B)
+<button class="x">{form.q4_b}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C)
+<button class="x">{form.q4_c}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D)
+<button class="x">{form.q4_d}</button><br />
+Correct Answer: <button class="x">{form.ca_4}</button><br />
+Description:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<button class="x">{form.q4_des}</button>
+<br />
+<hr />
+{/if}
+
+{#if form?.q5}
+<strong>Question 5: </strong><button class="x">{form.q5}</button
+><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A)
+<button class="x">{form.q5_a}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B)
+<button class="x">{form.q5_b}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C)
+<button class="x">{form.q5_c}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D)
+<button class="x">{form.q5_d}</button><br />
+Correct Answer: <button class="x">{form.ca_5}</button><br />
+Description:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<button class="x">{form.q5_des}</button>
+<br />
+<hr />
+{/if}
+
+{#if form?.q6}
+<strong>Question 6: </strong><button class="x">{form.q6}</button
+><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A)
+<button class="x">{form.q6_a}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B)
+<button class="x">{form.q6_b}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C)
+<button class="x">{form.q6_c}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D)
+<button class="x">{form.q6_d}</button><br />
+Correct Answer: <button class="x">{form.ca_6}</button><br />
+Description:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<button class="x">{form.q6_des}</button>
+<br />
+<hr />
+{/if}
+
+{#if form?.q7}
+<strong>Question 7: </strong><button class="x">{form.q7}</button
+><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A)
+<button class="x">{form.q7_a}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B)
+<button class="x">{form.q7_b}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C)
+<button class="x">{form.q7_c}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D)
+<button class="x">{form.q7_d}</button><br />
+Correct Answer: <button class="x">{form.ca_7}</button><br />
+Description:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<button class="x">{form.q7_des}</button>
+<br />
+<hr />
+{/if}
+
+{#if form?.q8}
+<strong>Question 8: </strong><button class="x">{form.q8}</button
+><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A)
+<button class="x">{form.q8_a}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B)
+<button class="x">{form.q8_b}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C)
+<button class="x">{form.q8_c}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D)
+<button class="x">{form.q8_d}</button><br />
+Correct Answer: <button class="x">{form.ca_8}</button><br />
+Description:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<button class="x">{form.q8_des}</button>
+<br />
+<hr />
+{/if}
+
+{#if form?.q9}
+<strong>Question 9: </strong><button class="x">{form.q9}</button
+><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A)
+<button class="x">{form.q9_a}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B)
+<button class="x">{form.q9_b}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C)
+<button class="x">{form.q9_c}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D)
+<button class="x">{form.q9_d}</button><br />
+Correct Answer: <button class="x">{form.ca_9}</button><br />
+Description:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<button class="x">{form.q9_des}</button>
+<br />
+<hr />
+{/if}
+
+{#if form?.q10}
+<strong>Question 10: </strong><button class="x">{form.q10}</button
+><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A)
+<button class="x">{form.q10_a}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B)
+<button class="x">{form.q10_b}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C)
+<button class="x">{form.q10_c}</button><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D)
+<button class="x">{form.q10_d}</button><br />
+Correct Answer: <button class="x">{form.ca_10}</button><br />
+Description:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<button class="x">{form.q10_des}</button>
+<br />
+<hr />
+{/if}

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import '$lib/css/app.css';
     import "$lib/css/question.css";
     import type { ActionData, PageData } from "./$types";
     export let form: ActionData;
@@ -20,6 +21,9 @@
   </script>
   
   <div class="form-container">
+    <script>
+      localStorage.setItem("condition", 4);
+    </script>
     <form class="form" id="questForm" method="POST">
       <div class="form-group">
         <h2>Edit Question 4</h2>

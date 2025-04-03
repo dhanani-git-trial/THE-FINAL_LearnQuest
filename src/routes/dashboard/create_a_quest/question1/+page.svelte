@@ -1,7 +1,7 @@
 <script lang="ts">
+  import '$lib/css/app.css';
   import "$lib/css/question.css";
   import type { ActionData, PageData } from "./$types";
-  export let form: ActionData;
   export let data: PageData;
 
   let correctAnswer = ""; // To store the selected correct answer
@@ -17,9 +17,13 @@
     const target = event.target as HTMLTextAreaElement;
     charCount = target.value.length;
   };
+
 </script>
 
 <div class="form-container">
+  <script>
+    localStorage.setItem("condition", 1);
+  </script>
   <form class="form" id="questForm" method="POST">
     <div class="form-group">
       <h2>Edit Question 1</h2>
@@ -79,6 +83,8 @@
         </label>
       </div>
       <input class="email_input" type="text" name="email" value={data.email}>
-    <button class="form-submit-btn" type="submit">Submit</button>
+      <div class="flex">
+    <button class="form-submit-btn" type="submit">Go to Question 2</button>
+  </div>
   </form>
 </div>

@@ -1,0 +1,20 @@
+
+.x {
+    border-radius: 5px;
+    margin-top: 0px;
+    padding: 4px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #0000ff4d;
+    cursor: text !important;
+  }
+
+  body {
+    background: #131317;
+  }
+
+
+  .center {
+    text-align: center;
+  }
+

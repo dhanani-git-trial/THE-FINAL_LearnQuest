@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/css/app.css';
 	import type { PageData } from "./$types";
 	import Logo from "$lib/images/LearnQuest_logo.png";
 	function Account() {

@@ -3,7 +3,7 @@
     import type { ActionData, PageData } from "./$types";
     export let form: ActionData;
     export let data: PageData;
-  
+    import '$lib/css/app.css';
     let correctAnswer = ""; // To store the selected correct answer
     let charCount = 0; // To track the character count for the description
   
@@ -20,6 +20,9 @@
   </script>
   
   <div class="form-container">
+    <script>
+      localStorage.setItem("condition", 10);
+    </script>
     <form class="form" id="questForm" method="POST">
       <div class="form-group">
         <h2>Edit Question 10</h2>

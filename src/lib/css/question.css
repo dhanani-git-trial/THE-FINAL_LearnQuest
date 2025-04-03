@@ -144,16 +144,16 @@ p {
 }
 
 .form-container .form-submit-btn {
-  font-family: inherit;
-  color: #717171;
-  font-weight: 600;
-  width: 40%;
-  background: #fff;
-  border: 1px solid #414141;
-  padding: 12px 16px;
-  font-size: inherit;
-  cursor: pointer;
-  border-radius: 6px;
+  font-family: inherit !important;
+  color: #717171 !important;
+  font-weight: 600 !important;
+  width: 40% !important;
+  background: #fff !important;
+  border: 1px solid #414141 !important;
+  padding: 12px 16px !important;
+  font-size: inherit !important;
+  cursor: pointer !important;
+  border-radius: 6px !important;
 }
 
 h2 {
@@ -163,4 +163,12 @@ h2 {
 
 .email_input {
   visibility: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+.ml {
+  margin-left: 10px;
 }

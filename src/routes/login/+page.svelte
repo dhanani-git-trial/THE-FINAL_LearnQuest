@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { enhance } from "$app/forms";
 	import type { ActionData } from "./$types";
-
+	import '$lib/css/app.css';
 	export let form: ActionData;
 </script>
 
