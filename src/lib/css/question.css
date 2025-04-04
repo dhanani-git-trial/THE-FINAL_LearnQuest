@@ -172,3 +172,13 @@ h2 {
 .ml {
   margin-left: 10px;
 }
+
+.small {
+  font-size: 12px;
+  vertical-align: top;
+  margin-left: 45px;
+}
+
+.margin-t {
+  margin-top: 10px;
+}

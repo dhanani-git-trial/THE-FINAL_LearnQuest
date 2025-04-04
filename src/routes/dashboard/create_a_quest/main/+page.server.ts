@@ -15,10 +15,10 @@ export const actions: Actions = {
             const name = formData.get('name') as string;
             const email = formData.get('email') as string;
             const quest_type = formData.get('quest_type') as string;
-            const questionCount = parseInt(formData.get('question_count') as string, 10);
+            const quest_title = formData.get('quest_title') as string;
 
             // Validate form data
-            if (!name || !email || !quest_type || isNaN(questionCount)) {
+            if (!name || !email || !quest_type || !quest_title) {
                 throw new Error('Invalid form data');
             }
 
@@ -32,7 +32,7 @@ export const actions: Actions = {
             const collection = database.collection('tempquest');
 
             // Data to update
-            const data = { name, email, quest_type, questionCount };
+            const data = { name, email, quest_type, quest_title };
 
             // Update if email exists, insert if not found
             const result = await collection.updateOne(

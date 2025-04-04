@@ -28,7 +28,7 @@ export const actions: Actions = {
                 const user = await collection.findOne({ email: email_val });
                 if (user) {
                     return  { 
-                        quest_type: user.quest_type, questionCount: user.questionCount, 
+                        quest_type: user.quest_type, questionCount: user.questionCount, quest_title: user.quest_title,
                         ca_1: user.ca_1, q1: user.q1, q1_a: user.q1_a, q1_b: user.q1_b, q1_c: user.q1_c, q1_d: user.q1_d, q1_des: user.q1_des,  
 ca_2: user.ca_2, q2: user.q2, q2_a: user.q2_a, q2_b: user.q2_b, q2_c: user.q2_c, q2_d: user.q2_d, q2_des: user.q2_des,  
 ca_3: user.ca_3, q3: user.q3, q3_a: user.q3_a, q3_b: user.q3_b, q3_c: user.q3_c, q3_d: user.q3_d, q3_des: user.q3_des,  

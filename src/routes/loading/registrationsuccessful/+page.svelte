@@ -6,6 +6,7 @@
     }, 1000);  // 1000 milliseconds = 1 second
 </script>
 <div>
+<Spinner/>
 <h3>Registration successful!<br>Redirecting to login page...</h3>
 </div>
 <style>

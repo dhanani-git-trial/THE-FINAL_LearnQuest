@@ -1,12 +1,12 @@
 <script lang="ts">
     import "$lib/css/question.css";
+    import Back from "$lib/components/Back.svelte";
     import '$lib/css/app.css';
     import type { ActionData, PageData } from "./$types";
-    export let form: ActionData;
     export let data: PageData;
   
     let correctAnswer = ""; // To store the selected correct answer
-    let charCount = 0; // To track the character count for the description
+    let charCount = 0; // To track the character count for the Explanation
   
     // Handlers for selecting the correct answer
     const selectAnswer = (answer: string) => {
@@ -26,6 +26,7 @@
     </script>
     <form class="form" id="questForm" method="POST">
       <div class="form-group">
+        <Back></Back>
         <h2>Edit Question 2</h2>
         <br>
         <label for="q2">Question</label>
@@ -40,15 +41,15 @@
         <input type="text" id="q2_b" name="q2_b" required>
       </div>
       <div class="form-group">
-        <label for="q2_c">Answer Choice C</label>
+        <label for="q2_c">Answer Choice C (optional)</label>
         <input type="text" id="q2_c" name="q2_c">
       </div>
       <div class="form-group">
-        <label for="q2_d">Answer Choice D</label>
+        <label for="q2_d">Answer Choice D (optional)</label>
         <input type="text" id="q2_d" name="q2_d">
       </div>
       <div class="form-group">
-        <label for="q2_des">Description</label>
+        <label for="q2_des">Explanation</label>
         <textarea
           id="q2_des"
           name="q2_des"
@@ -56,7 +57,7 @@
           maxlength="270"
           rows="5"
           cols="50"
-          placeholder="Type here..."
+          placeholder=""
           on:input={updateCharCount}
         ></textarea>
         <p id="charCount">{charCount} / 270</p>
@@ -83,7 +84,7 @@
           </label>
         </div>
         <input class="email_input" type="text" name="email" value={data.email}>
-      <button class="form-submit-btn" type="submit">Submit</button>
+      <button class="form-submit-btn" type="submit">Save Changes</button>
     </form>
   </div>
   

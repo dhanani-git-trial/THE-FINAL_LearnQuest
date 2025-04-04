@@ -1,6 +1,7 @@
 import type { Actions } from './$types';
 import { MongoClient } from 'mongodb';
 import { SECRET_MONGODB_URI } from "$env/static/private";
+import { redirect } from '@sveltejs/kit';
 
 if (!SECRET_MONGODB_URI || typeof SECRET_MONGODB_URI !== 'string') {
     throw new Error('Invalid or undefined MongoDB connection string in environment variables.');
@@ -44,7 +45,8 @@ export const actions: Actions = {
             );
 
         } catch (error) {
-            throw new Error('Error in default action: ' + error);
+            console.error('Error in default action:', error);
         }
+        throw redirect(303, "/dashboard/create_a_quest/quest_storage");
     },
 };

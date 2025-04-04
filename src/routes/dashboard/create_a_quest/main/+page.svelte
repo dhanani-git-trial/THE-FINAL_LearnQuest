@@ -4,40 +4,10 @@
   import { writable } from "svelte/store";
   import type { ActionData, PageData } from "./$types";
 
-export let form: ActionData;
-
   import "$lib/css/create_a_quest.css";
   export let data: PageData;
   let counter = writable(1);
   let countValue = 1; // Keep a separate variable for immediate updates
-
-  function increment() {
-    if (countValue < 10) {
-      countValue++; // Update immediately
-      updateCounter();
-    }
-  }
-
-  function decrement() {
-    if (countValue > 1) {
-      countValue--; // Update immediately
-      updateCounter();
-    }
-  }
-
-  function updateCounter() {
-  counter.set(countValue);
-  console.log("Counter updated:", countValue);
-  requestAnimationFrame(() => localStorage.setItem('questionCount', String(countValue)));
-}
-
-  onMount(() => {
-    const storedCount = localStorage.getItem('questionCount');
-    if (storedCount) {
-      countValue = parseInt(storedCount, 10);
-      counter.set(countValue);
-    }
-  });
 </script>
 
 <svelte:head>
@@ -45,12 +15,19 @@ export let form: ActionData;
 </svelte:head>
 
 <br>
+<style>
+  .textin {
+    border: 2px solid purple;
+  }
+</style>
 
 <form id="questForm" method="POST">
   <script>
     localStorage.setItem("condition", 0);
   </script>
  <h2>Type of Quest</h2>
+  <p>
+    By selecting a type of quest, you can choose the type of quest you would like to create!
   <div class="radio-input">
     <label class="label">
       <input type="radio" name="quest_type" value="IceQuest Platformer" required />
@@ -65,19 +42,17 @@ export let form: ActionData;
       <p class="text">Timed Quiz</p>
     </label>
   </div>
+  <!-- svelte-ignore a11y-label-has-associated-control -->
+  <label class="label">Quest Title</label>
+  <input class="textin" name="quest_title" id="quest_title" type="text" placeholder="" required />
+  <p class="text">By creating a title, you can give your quest a name!</p>
+  <p class="text">This will be the name of your quest.</p>
 
   <br>
   <textarea id="name" name="name" required>{data?.name || ''}</textarea>
   <textarea id="email" name="email" required>{data?.email || ''}</textarea>
 
   <br>
-  <h2>Amount of Questions (max 10)</h2>
-  <div class="ingrp">
-    <button id="question-btn" type="button" on:click={decrement}>-</button>
-    <input id="question" type="number" bind:value={$counter} readonly>
-    <input type="hidden" name="question_count" value={$counter} />
-    <button id="question-btn" type="button" on:click={increment}>+</button>
-  </div>
 
   <br>
   <button type="submit" class="button x">

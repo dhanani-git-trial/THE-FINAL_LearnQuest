@@ -37,7 +37,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="card" on:click={MyQuests}>
 	<div class="card-body">
-		<h1>My Quests</h1>
+		<h1>Play a Quest</h1>
 	</div>
 </div>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
